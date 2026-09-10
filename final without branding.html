@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gimme5ai™ Boutique Chic Holiday Art Builder</title>
+  <meta name="description" content="Build polished boutique holiday artwork prompts with the Gimme5ai™ Design System." />
+
+  <style>
+    :root{
+      --rr-cream:#FAF7F0;
+      --rr-white:#FFFFFF;
+      --rr-blue:#044282;
+      --rr-blue-deep:#032E5A;
+      --rr-orange:#F67F3E;
+      --rr-pink:#F72C8B;
+      --rr-black:#171717;
+      --rr-gray-900:#262626;
+      --rr-gray-700:#555555;
+      --rr-gray-500:#7D7D7D;
+      --rr-gray-300:#D8D8D8;
+      --rr-gray-200:#E9E6E0;
+      --rr-gray-100:#F4F1EB;
+      --rr-success:#177A52;
+      --rr-shadow:0 14px 34px rgba(23,23,23,.08);
+      --rr-shadow-soft:0 8px 22px rgba(23,23,23,.06);
+      --rr-radius-xl:28px;
+      --rr-radius-lg:20px;
+      --rr-radius-md:14px;
+      --rr-radius-sm:10px;
+      --rr-border:1px solid var(--rr-gray-200);
+    }
+
+    *{box-sizing:border-box}
+
+    html{scroll-behavior:smooth}
+
+    body{
+      margin:0;
+      min-height:100vh;
+      background:
+        radial-gradient(circle at 12% 8%, rgba(247,44,139,.07), transparent 24%),
+        radial-gradient(circle at 88% 12%, rgba(246,127,62,.08), transparent 22%),
+        var(--rr-cream);
+      color:var(--rr-black);
+      font-family:Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height:1.5;
+    }
+
+    button, select, textarea, input{font:inherit}
+
+    button{cursor:pointer}
+
+    .app-shell{
+      width:min(1180px, calc(100% - 32px));
+      margin:0 auto;
+      padding:28px 0 48px;
+    }
+
+    .topbar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:18px;
+      margin-bottom:20px;
+    }
+
+    .brand-lockup{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width:0;
+    }
+
+    .brand-mark{
+      width:48px;
+      height:48px;
+      border-radius:16px;
+      display:grid;
+      place-items:center;
+      color:#fff;
+      font-weight:900;
+      letter-spacing:-1px;
+      background:var(--rr-blue);
+      box-shadow:var(--rr-shadow-soft);
+      flex:none;
+    }
+
+    .brand-copy{
+      min-width:0;
+    }
+
+    .brand-copy strong{
+      display:block;
+      font-size:15px;
+      line-height:1.1;
+      letter-spacing:.02em;
+    }
+
+    .brand-copy span{
+      display:block;
+      margin-top:4px;
+      color:var(--rr-gray-500);
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+
+    .status-pill{
+      flex:none;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      background:#fff;
+      border:var(--rr-border);
+      border-radius:999px;
+      padding:9px 12px;
+      color:var(--rr-gray-700);
+      font-size:12px;
+      font-weight:800;
+      box-shadow:var(--rr-shadow-soft);
+    }
+
+    .status-dot{
+      width:8px;
+      height:8px;
+      border-radius:50%;
+      background:var(--rr-success);
+    }
+
+    .hero{
+      position:relative;
+      overflow:hidden;
+      background:var(--rr-blue);
+      color:#fff;
+      border-radius:var(--rr-radius-xl);
+      padding:34px;
+      box-shadow:var(--rr-shadow);
+      margin-bottom:22px;
+    }
+
+    .hero:before{
+      content:"";
+      position:absolute;
+      width:190px;
+      height:190px;
+      border-radius:50%;
+      background:rgba(247,44,139,.22);
+      top:-95px;
+      right:100px;
+    }
+
+    .hero:after{
+      content:"";
+      position:absolute;
+      width:150px;
+      height:150px;
+      border-radius:50%;
+      background:rgba(246,127,62,.25);
+      right:-50px;
+      bottom:-70px;
+    }
+
+    .hero-inner{
+      position:relative;
+      z-index:1;
+      max-width:850px;
+    }
+
+    .eyebrow{
+      display:inline-block;
+      margin-bottom:12px;
+      padding:7px 10px;
+      border-radius:999px;
+      background:rgba(255,255,255,.12);
+      border:1px solid rgba(255,255,255,.18);
+      font-size:11px;
+      font-weight:900;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+    }
+
+    h1{
+      margin:0;
+      max-width:820px;
+      font-size:clamp(34px,5.4vw,66px);
+      line-height:.95;
+      letter-spacing:-.045em;
+      font-weight:950;
+      text-transform:uppercase;
+    }
+
+    .hero p{
+      margin:18px 0 0;
+      max-width:760px;
+      color:rgba(255,255,255,.86);
+      font-size:16px;
+    }
+
+    .workspace{
+      display:grid;
+      grid-template-columns:minmax(0, 1.05fr) minmax(340px,.95fr);
+      gap:22px;
+      align-items:start;
+    }
+
+    .panel{
+      background:rgba(255,255,255,.96);
+      border:var(--rr-border);
+      border-radius:var(--rr-radius-xl);
+      box-shadow:var(--rr-shadow-soft);
+      overflow:hidden;
+    }
+
+    .panel-head{
+      padding:22px 24px;
+      border-bottom:var(--rr-border);
+      display:flex;
+      justify-content:space-between;
+      gap:16px;
+      align-items:flex-start;
+    }
+
+    .panel-kicker{
+      color:var(--rr-pink);
+      font-size:11px;
+      font-weight:950;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      margin-bottom:5px;
+    }
+
+    .panel-title{
+      margin:0;
+      color:var(--rr-black);
+      font-size:22px;
+      line-height:1.15;
+      letter-spacing:-.02em;
+    }
+
+    .panel-note{
+      margin:7px 0 0;
+      color:var(--rr-gray-500);
+      font-size:13px;
+    }
+
+    .panel-body{
+      padding:24px;
+    }
+
+    .form-grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:18px;
+    }
+
+    .field{
+      min-width:0;
+    }
+
+    .field.full{grid-column:1 / -1}
+
+    label{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      margin-bottom:8px;
+      color:var(--rr-gray-900);
+      font-size:12px;
+      font-weight:900;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+    }
+
+    .label-number{
+      display:inline-grid;
+      place-items:center;
+      width:24px;
+      height:24px;
+      border-radius:8px;
+      color:#fff;
+      background:var(--rr-blue);
+      font-size:11px;
+      font-weight:900;
+      letter-spacing:0;
+      flex:none;
+    }
+
+    select,
+    textarea,
+    input[type="text"]{
+      width:100%;
+      border:1px solid var(--rr-gray-300);
+      border-radius:var(--rr-radius-md);
+      background:#fff;
+      color:var(--rr-black);
+      outline:none;
+      transition:.2s ease;
+    }
+
+    select,
+    input[type="text"]{
+      min-height:48px;
+      padding:0 14px;
+    }
+
+    textarea{
+      min-height:122px;
+      resize:vertical;
+      padding:14px;
+      line-height:1.55;
+    }
+
+    select:focus,
+    textarea:focus,
+    input[type="text"]:focus{
+      border-color:var(--rr-blue);
+      box-shadow:0 0 0 3px rgba(4,66,130,.12);
+    }
+
+    .mini-help{
+      margin-top:6px;
+      color:var(--rr-gray-500);
+      font-size:11px;
+    }
+
+    .preset-strip{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-bottom:20px;
+    }
+
+    .preset-btn{
+      border:1px solid var(--rr-gray-300);
+      background:#fff;
+      color:var(--rr-gray-900);
+      border-radius:999px;
+      padding:8px 11px;
+      font-size:11px;
+      font-weight:900;
+      letter-spacing:.03em;
+      transition:.2s ease;
+    }
+
+    .preset-btn:hover{
+      border-color:var(--rr-blue);
+      color:var(--rr-blue);
+      transform:translateY(-1px);
+    }
+
+    .check-card{
+      border:1px solid var(--rr-gray-200);
+      background:var(--rr-gray-100);
+      border-radius:var(--rr-radius-lg);
+      padding:15px;
+    }
+
+    .check-title{
+      margin:0 0 10px;
+      font-size:12px;
+      font-weight:950;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+    }
+
+    .checks{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:9px 12px;
+    }
+
+    .check{
+      display:flex;
+      align-items:center;
+      gap:9px;
+      min-width:0;
+      color:var(--rr-gray-700);
+      font-size:12px;
+      font-weight:700;
+      text-transform:none;
+      letter-spacing:0;
+      margin:0;
+    }
+
+    .check input{
+      width:17px;
+      height:17px;
+      accent-color:var(--rr-pink);
+      flex:none;
+    }
+
+    .action-row{
+      display:grid;
+      grid-template-columns:1.35fr repeat(3,auto);
+      gap:10px;
+      margin-top:22px;
+    }
+
+    .btn{
+      min-height:48px;
+      border:0;
+      border-radius:var(--rr-radius-md);
+      padding:0 16px;
+      font-weight:950;
+      letter-spacing:.01em;
+      transition:.2s ease;
+      white-space:nowrap;
+    }
+
+    .btn:hover{transform:translateY(-1px)}
+
+    .btn-primary{
+      background:var(--rr-pink);
+      color:#fff;
+      box-shadow:0 10px 20px rgba(247,44,139,.18);
+    }
+
+    .btn-primary:hover{background:#DB1F76}
+
+    .btn-secondary{
+      background:var(--rr-blue);
+      color:#fff;
+    }
+
+    .btn-tertiary{
+      background:#fff;
+      color:var(--rr-gray-900);
+      border:1px solid var(--rr-gray-300);
+    }
+
+    .btn-clear{
+      background:var(--rr-gray-100);
+      color:var(--rr-gray-700);
+      border:1px solid var(--rr-gray-200);
+    }
+
+    .result-panel{
+      position:sticky;
+      top:20px;
+    }
+
+    .output-wrap{
+      display:flex;
+      flex-direction:column;
+      gap:16px;
+    }
+
+    .empty-state{
+      min-height:460px;
+      border:1px dashed var(--rr-gray-300);
+      border-radius:var(--rr-radius-lg);
+      display:grid;
+      place-items:center;
+      text-align:center;
+      padding:36px;
+      color:var(--rr-gray-500);
+      background:
+        linear-gradient(180deg, rgba(250,247,240,.6), rgba(255,255,255,.95));
+    }
+
+    .empty-state strong{
+      display:block;
+      color:var(--rr-gray-900);
+      font-size:18px;
+      margin-bottom:7px;
+    }
+
+    .result-content{display:none}
+
+    .result-content.active{display:block}
+
+    .output-card{
+      border:1px solid var(--rr-gray-200);
+      border-radius:var(--rr-radius-lg);
+      background:#fff;
+      overflow:hidden;
+    }
+
+    .output-label{
+      display:flex;
+      justify-content:space-between;
+      gap:10px;
+      align-items:center;
+      padding:12px 14px;
+      border-bottom:var(--rr-border);
+      background:var(--rr-gray-100);
+      color:var(--rr-gray-700);
+      font-size:10px;
+      font-weight:950;
+      letter-spacing:.11em;
+      text-transform:uppercase;
+    }
+
+    .output-value{
+      padding:14px;
+      color:var(--rr-gray-900);
+      font-size:14px;
+      white-space:pre-wrap;
+      word-break:break-word;
+    }
+
+    .prompt-box{
+      min-height:225px;
+      line-height:1.65;
+    }
+
+    .tag-wrap{
+      display:flex;
+      flex-wrap:wrap;
+      gap:7px;
+    }
+
+    .tag{
+      display:inline-flex;
+      align-items:center;
+      background:rgba(4,66,130,.08);
+      color:var(--rr-blue);
+      border:1px solid rgba(4,66,130,.12);
+      border-radius:999px;
+      padding:6px 9px;
+      font-size:10px;
+      font-weight:900;
+    }
+
+    .output-actions{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:10px;
+      margin-top:16px;
+    }
+
+    .toast{
+      position:fixed;
+      left:50%;
+      bottom:24px;
+      transform:translate(-50%, 20px);
+      opacity:0;
+      pointer-events:none;
+      z-index:100;
+      background:var(--rr-black);
+      color:#fff;
+      border-radius:999px;
+      padding:10px 14px;
+      font-size:12px;
+      font-weight:800;
+      transition:.25s ease;
+      box-shadow:var(--rr-shadow);
+    }
+
+    .toast.show{
+      opacity:1;
+      transform:translate(-50%,0);
+    }
+
+    .footer{
+      text-align:center;
+      color:var(--rr-gray-500);
+      font-size:11px;
+      margin-top:22px;
+    }
+
+    .footer strong{color:var(--rr-blue)}
+
+    @media (max-width:900px){
+      .workspace{grid-template-columns:1fr}
+      .result-panel{position:static}
+      .action-row{grid-template-columns:1fr 1fr}
+      .action-row .btn-primary{grid-column:1 / -1}
+    }
+
+    @media (max-width:640px){
+      .app-shell{
+        width:min(100% - 20px, 1180px);
+        padding-top:14px;
+      }
+
+      .topbar{align-items:flex-start}
+      .status-pill{display:none}
+
+      .hero{padding:26px 22px}
+      .hero p{font-size:14px}
+
+      .panel-head,
+      .panel-body{padding:18px}
+
+      .form-grid{grid-template-columns:1fr}
+      .field.full{grid-column:auto}
+
+      .checks{grid-template-columns:1fr}
+
+      .action-row{grid-template-columns:1fr}
+      .action-row .btn-primary{grid-column:auto}
+
+      .output-actions{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <div class="brand-lockup">
+        <div class="brand-mark">G5</div>
+        <div class="brand-copy">
+          <strong>Gimme5ai™</strong>
+          <span>AI Without the Overwhelm™</span>
+        </div>
+      </div>
+
+      <div class="status-pill">
+        <span class="status-dot"></span>
+        BUILDER READY
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="eyebrow">Gimme5ai™ Design Builder</div>
+        <h1>Boutique Chic Holiday Art Builder</h1>
+        <p>
+          Build a polished, commercial-quality holiday artwork prompt with boutique styling,
+          intentional composition, controlled color, and print-ready visual direction.
+        </p>
+      </div>
+    </section>
+
+    <section class="workspace">
+      <section class="panel">
+        <div class="panel-head">
+          <div>
+            <div class="panel-kicker">Build Your Prompt</div>
+            <h2 class="panel-title">Choose the creative direction</h2>
+            <p class="panel-note">Start with a preset or customize each selection below.</p>
+          </div>
+        </div>
+
+        <div class="panel-body">
+          <div class="preset-strip" aria-label="Quick presets">
+            <button class="preset-btn" type="button" onclick="applyPreset('boutique')">Boutique Classic</button>
+            <button class="preset-btn" type="button" onclick="applyPreset('retro')">Retro Holiday</button>
+            <button class="preset-btn" type="button" onclick="applyPreset('folk')">Folk Art</button>
+            <button class="preset-btn" type="button" onclick="applyPreset('random')">Surprise Me</button>
+          </div>
+
+          <div class="form-grid">
+            <div class="field">
+              <label for="holiday"><span><span class="label-number">1</span>&nbsp; Holiday</span></label>
+              <select id="holiday">
+                <option value="">None</option>
+                <option value="Christmas">Christmas</option>
+                <option value="Halloween">Halloween</option>
+                <option value="Valentine's Day">Valentine's Day</option>
+                <option value="Easter">Easter</option>
+                <option value="Fourth of July">Fourth of July</option>
+                <option value="Thanksgiving">Thanksgiving</option>
+                <option value="Hanukkah">Hanukkah</option>
+                <option value="New Year">New Year</option>
+                <option value="Día de los Muertos">Día de los Muertos</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="style"><span><span class="label-number">2</span>&nbsp; Art Style</span></label>
+              <select id="style">
+                <option value="">None</option>
+                <option value="boutique folk art">Boutique Folk Art</option>
+                <option value="retro boutique illustration">Retro Boutique</option>
+                <option value="art deco illustration">Art Deco</option>
+                <option value="playful chibi illustration">Chibi</option>
+                <option value="storybook painterly illustration">Storybook Painterly</option>
+                <option value="cinematic photo-illustration">Cinematic Photo-Illustration</option>
+                <option value="vintage editorial illustration">Vintage Editorial</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="timeOfDay"><span><span class="label-number">3</span>&nbsp; Time of Day</span></label>
+              <select id="timeOfDay">
+                <option value="">None</option>
+                <option value="bright cheerful daylight">Bright Daylight</option>
+                <option value="warm golden hour">Golden Hour</option>
+                <option value="soft twilight">Twilight</option>
+                <option value="dramatic moonlight">Moonlit</option>
+                <option value="cozy indoor evening light">Indoor Evening</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="humorLevel"><span><span class="label-number">4</span>&nbsp; Humor Level</span></label>
+              <select id="humorLevel">
+                <option value="">None</option>
+                <option value="no humor; elegant and polished">None / Elegant</option>
+                <option value="gentle subtle humor">Subtle Whimsy</option>
+                <option value="light playful humor">Light Playful</option>
+                <option value="bold playful humor">Bold Playful</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="setting"><span><span class="label-number">5</span>&nbsp; Setting</span></label>
+              <select id="setting">
+                <option value="">None</option>
+                <option value="cozy farmhouse setting">Farmhouse</option>
+                <option value="small-town main street">Small-Town Main Street</option>
+                <option value="festive cultural plaza">Cultural Plaza</option>
+                <option value="rustic barn setting">Rustic Barn</option>
+                <option value="storybook landscape">Storybook Landscape</option>
+                <option value="boutique storefront scene">Boutique Storefront</option>
+                <option value="clean studio backdrop">Studio Backdrop</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="aspectRatio"><span><span class="label-number">6</span>&nbsp; Aspect Ratio</span></label>
+              <select id="aspectRatio">
+                <option value="">None</option>
+                <option value="1:1 square">1:1 Square</option>
+                <option value="4:5 portrait">4:5 Portrait</option>
+                <option value="3:2 landscape">3:2 Landscape</option>
+                <option value="9:16 vertical">9:16 Vertical</option>
+                <option value="16:9 widescreen">16:9 Widescreen</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="palette"><span><span class="label-number">7</span>&nbsp; Color Palette</span></label>
+              <select id="palette">
+                <option value="">None</option>
+                <option value="dusty turquoise, terracotta, warm beige, faded red, and creamy white">Dusty Boutique</option>
+                <option value="emerald, ruby red, warm gold, ivory, and forest green">Classic Holiday Jewel</option>
+                <option value="soft blush, sage, cream, muted cranberry, and champagne">Soft Vintage</option>
+                <option value="faded aqua, cherry red, butter yellow, cream, and soft black">Retro Cheer</option>
+                <option value="deep plum, antique gold, black, ivory, and dusty rose">Moody Boutique</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="finish"><span><span class="label-number">8</span>&nbsp; Finish</span></label>
+              <select id="finish">
+                <option value="">None</option>
+                <option value="soft matte boutique print finish">Soft Matte Boutique</option>
+                <option value="clean commercial illustration finish">Clean Commercial</option>
+                <option value="lightly distressed vintage print finish">Light Vintage Distress</option>
+                <option value="rich dimensional painterly finish">Dimensional Painterly</option>
+              </select>
+            </div>
+
+            <div class="field full">
+              <div class="check-card">
+                <h3 class="check-title">Optional Design Elements</h3>
+                <div class="checks">
+                  <label class="check"><input type="checkbox" value="decorative roses" class="motif"> Decorative roses</label>
+                  <label class="check"><input type="checkbox" value="subtle floral accents" class="motif"> Floral accents</label>
+                  <label class="check"><input type="checkbox" value="holiday greenery" class="motif"> Holiday greenery</label>
+                  <label class="check"><input type="checkbox" value="snowflakes" class="motif"> Snowflakes</label>
+                  <label class="check"><input type="checkbox" value="pumpkins" class="motif"> Pumpkins</label>
+                  <label class="check"><input type="checkbox" value="farm animals" class="motif"> Farm animals</label>
+                  <label class="check"><input type="checkbox" value="vintage ornament details" class="motif"> Vintage ornaments</label>
+                  <label class="check"><input type="checkbox" value="tasteful cultural motifs" class="motif"> Cultural motifs</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="field full">
+              <label for="customDetails"><span><span class="label-number">9</span>&nbsp; Custom Details</span></label>
+              <textarea id="customDetails" placeholder="Optional: add the subject, clothing, character, objects, scene details, pose, mood, or other direction you want included."></textarea>
+              <div class="mini-help">Leave blank if you want the builder to keep the scene broad and flexible.</div>
+            </div>
+
+            <div class="field full">
+              <label for="caption"><span><span class="label-number">10</span>&nbsp; Exact Caption or Saying</span></label>
+              <input id="caption" type="text" placeholder="Optional: type exact wording to place in the artwork." />
+            </div>
+          </div>
+
+          <div class="action-row">
+            <button class="btn btn-primary" type="button" onclick="generateArt()">Generate Prompt</button>
+            <button class="btn btn-secondary" type="button" onclick="randomizeAll()">Randomize</button>
+            <button class="btn btn-tertiary" type="button" onclick="copyPrompt()">Copy</button>
+            <button class="btn btn-clear" type="button" onclick="clearAll()">Clear</button>
+          </div>
+        </div>
+      </section>
+
+      <aside class="panel result-panel">
+        <div class="panel-head">
+          <div>
+            <div class="panel-kicker">Prompt Output</div>
+            <h2 class="panel-title">Your finished art direction</h2>
+            <p class="panel-note">Built for clean copy-and-paste use in your image tool.</p>
+          </div>
+        </div>
+
+        <div class="panel-body">
+          <div id="emptyState" class="empty-state">
+            <div>
+              <strong>Your prompt will appear here.</strong>
+              Choose your options, then select Generate Prompt.
+            </div>
+          </div>
+
+          <div id="resultContent" class="result-content">
+            <div class="output-wrap">
+              <div class="output-card">
+                <div class="output-label">Title</div>
+                <div id="artTitle" class="output-value"></div>
+              </div>
+
+              <div class="output-card">
+                <div class="output-label">Vibe</div>
+                <div id="artVibe" class="output-value"></div>
+              </div>
+
+              <div class="output-card">
+                <div class="output-label">Full Art Prompt</div>
+                <div id="artPrompt" class="output-value prompt-box"></div>
+              </div>
+
+              <div class="output-card">
+                <div class="output-label">Tags</div>
+                <div class="output-value">
+                  <div id="artTags" class="tag-wrap"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="output-actions">
+              <button class="btn btn-primary" type="button" onclick="copyPrompt()">Copy Full Prompt</button>
+              <button class="btn btn-tertiary" type="button" onclick="generateArt()">Regenerate</button>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <div class="footer">
+      <strong>Gimme5ai™</strong> · AI Without the Overwhelm™
+    </div>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite">Copied</div>
+
+  <script>
+    const fields = [
+      "holiday","style","timeOfDay","humorLevel","setting",
+      "aspectRatio","palette","finish"
+    ];
+
+    const holidayDefaultMotifs = {
+      "Christmas":["decorative roses","holiday greenery","snowflakes","vintage ornament details"],
+      "Halloween":["decorative roses","pumpkins","subtle floral accents"],
+      "Valentine's Day":["decorative roses","subtle floral accents"],
+      "Easter":["decorative roses","subtle floral accents","farm animals"],
+      "Fourth of July":["subtle floral accents"],
+      "Thanksgiving":["pumpkins","farm animals","subtle floral accents"],
+      "Hanukkah":["subtle floral accents"],
+      "New Year":["vintage ornament details"],
+      "Día de los Muertos":["decorative roses","subtle floral accents","tasteful cultural motifs"]
+    };
+
+    const titleStarters = [
+      "Boutique Holiday Collection",
+      "Holiday Chic Art Direction",
+      "Festive Boutique Illustration",
+      "Seasonal Art Collection",
+      "Boutique Celebration Series"
+    ];
+
+    function getValue(id){
+      return document.getElementById(id).value.trim();
+    }
+
+    function selectedMotifs(){
+      return Array.from(document.querySelectorAll(".motif:checked")).map(el => el.value);
+    }
+
+    function sentenceList(items){
+      if(!items.length) return "";
+      if(items.length === 1) return items[0];
+      if(items.length === 2) return items[0] + " and " + items[1];
+      return items.slice(0,-1).join(", ") + ", and " + items[items.length-1];
+    }
+
+    function safeTag(text){
+      return text
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g,"")
+        .replace(/[^a-z0-9]+/g,"-")
+        .replace(/^-+|-+$/g,"");
+    }
+
+    function buildPromptData(){
+      const holiday = getValue("holiday");
+      const style = getValue("style");
+      const time = getValue("timeOfDay");
+      const humor = getValue("humorLevel");
+      const setting = getValue("setting");
+      const ratio = getValue("aspectRatio");
+      const palette = getValue("palette");
+      const finish = getValue("finish");
+      const custom = getValue("customDetails");
+      const caption = getValue("caption");
+      const motifs = selectedMotifs();
+
+      const subjectBits = [];
+      if(holiday) subjectBits.push(holiday + "-inspired");
+      subjectBits.push("commercial-quality, print-ready boutique artwork");
+      if(style) subjectBits.push("in " + style + " style");
+      if(setting) subjectBits.push("set in a " + setting);
+      if(time) subjectBits.push("during " + time);
+
+      let prompt = "Create " + subjectBits.join(", ") + ". ";
+
+      prompt += "Use polished boutique styling, a clear focal hierarchy, confident subject separation, balanced composition, controlled decorative density, crisp professional edges, coherent lighting, and consistent texture treatment. ";
+
+      if(custom){
+        prompt += "Primary creative direction: " + custom.replace(/\s+/g," ").trim() + ". ";
+      }
+
+      if(motifs.length){
+        prompt += "Integrate " + sentenceList(motifs) + " as intentional supporting details without cluttering the composition. ";
+      }
+
+      if(palette){
+        prompt += "Use a disciplined palette of " + palette + ". ";
+      }
+
+      if(finish){
+        prompt += "Apply a " + finish + ". ";
+      }
+
+      if(humor){
+        prompt += "Keep the overall tone " + humor + ". ";
+      }
+
+      if(ratio){
+        prompt += "Format the artwork for " + ratio + ". ";
+      }
+
+      prompt += "Maintain professional boutique illustration quality with moderate detail, strong readability at reduced size, rich but controlled color relationships, clean anatomy, and intentional visual storytelling. ";
+
+      prompt += "Avoid caricature, demeaning stereotypes, distorted anatomy, muddy color, cluttered backgrounds, generic clip-art styling, random text, watermarks, logos, low-resolution details, accidental extra limbs or fingers, and poorly rendered typography.";
+
+      if(caption){
+        prompt += ' Add this exact caption or saying in decorative, readable lettering: "' + caption + '". Keep the wording exact, clean, legible, correctly spelled, and visually integrated with the artwork.';
+      }
+
+      const titleBase = holiday || "Seasonal";
+      const title = titleBase + " " + (style ? style.replace(/\b\w/g, c => c.toUpperCase()) : titleStarters[Math.floor(Math.random()*titleStarters.length)]);
+
+      const vibeParts = [];
+      if(style) vibeParts.push(style);
+      if(time) vibeParts.push(time);
+      if(humor) vibeParts.push(humor);
+      if(finish) vibeParts.push(finish);
+      const vibe = vibeParts.length ? sentenceList(vibeParts) : "polished boutique holiday illustration";
+
+      const tags = [
+        holiday || "holiday-art",
+        style || "boutique-art",
+        setting || "seasonal-design",
+        ratio || "print-ready",
+        "gimme5ai",
+        "boutique-chic",
+        "commercial-art",
+        "print-ready"
+      ].map(safeTag).filter(Boolean);
+
+      return { title, vibe, prompt, tags:[...new Set(tags)] };
+    }
+
+    function generateArt(){
+      const data = buildPromptData();
+
+      document.getElementById("artTitle").textContent = data.title;
+      document.getElementById("artVibe").textContent = data.vibe;
+      document.getElementById("artPrompt").textContent = data.prompt;
+
+      const tagsContainer = document.getElementById("artTags");
+      tagsContainer.innerHTML = "";
+      data.tags.forEach(tag => {
+        const el = document.createElement("span");
+        el.className = "tag";
+        el.textContent = "#" + tag;
+        tagsContainer.appendChild(el);
+      });
+
+      document.getElementById("emptyState").style.display = "none";
+      document.getElementById("resultContent").classList.add("active");
+    }
+
+    function randomOption(select){
+      const options = Array.from(select.options).filter(o => o.value);
+      if(!options.length) return;
+      select.value = options[Math.floor(Math.random()*options.length)].value;
+    }
+
+    function randomizeAll(){
+      fields.forEach(id => randomOption(document.getElementById(id)));
+
+      document.querySelectorAll(".motif").forEach(cb => cb.checked = Math.random() > .62);
+
+      if(!selectedMotifs().length){
+        const motifBoxes = Array.from(document.querySelectorAll(".motif"));
+        motifBoxes[Math.floor(Math.random()*motifBoxes.length)].checked = true;
+      }
+
+      generateArt();
+    }
+
+    function setMotifs(values){
+      document.querySelectorAll(".motif").forEach(cb => {
+        cb.checked = values.includes(cb.value);
+      });
+    }
+
+    function applyPreset(name){
+      const preset = {
+        boutique:{
+          holiday:"Christmas",
+          style:"cinematic photo-illustration",
+          timeOfDay:"bright cheerful daylight",
+          humorLevel:"gentle subtle humor",
+          setting:"small-town main street",
+          aspectRatio:"1:1 square",
+          palette:"dusty turquoise, terracotta, warm beige, faded red, and creamy white",
+          finish:"soft matte boutique print finish",
+          motifs:["decorative roses","subtle floral accents"]
+        },
+        retro:{
+          holiday:"Christmas",
+          style:"retro boutique illustration",
+          timeOfDay:"bright cheerful daylight",
+          humorLevel:"light playful humor",
+          setting:"boutique storefront scene",
+          aspectRatio:"4:5 portrait",
+          palette:"faded aqua, cherry red, butter yellow, cream, and soft black",
+          finish:"lightly distressed vintage print finish",
+          motifs:["vintage ornament details","holiday greenery"]
+        },
+        folk:{
+          holiday:"Thanksgiving",
+          style:"boutique folk art",
+          timeOfDay:"warm golden hour",
+          humorLevel:"gentle subtle humor",
+          setting:"cozy farmhouse setting",
+          aspectRatio:"3:2 landscape",
+          palette:"soft blush, sage, cream, muted cranberry, and champagne",
+          finish:"soft matte boutique print finish",
+          motifs:["decorative roses","subtle floral accents","farm animals"]
+        }
+      };
+
+      if(name === "random"){
+        randomizeAll();
+        return;
+      }
+
+      const p = preset[name];
+      Object.keys(p).forEach(key => {
+        if(key === "motifs") return;
+        const el = document.getElementById(key);
+        if(el) el.value = p[key];
+      });
+      setMotifs(p.motifs);
+      generateArt();
+    }
+
+    function copyPrompt(){
+      const prompt = document.getElementById("artPrompt").textContent.trim();
+      if(!prompt){
+        generateArt();
+      }
+
+      const finalPrompt = document.getElementById("artPrompt").textContent.trim();
+      navigator.clipboard.writeText(finalPrompt).then(() => {
+        showToast("Prompt copied");
+      }).catch(() => {
+        const range = document.createRange();
+        range.selectNodeContents(document.getElementById("artPrompt"));
+        const sel = window.getSelection();
+        sel.removeAllRanges();
+        sel.addRange(range);
+        document.execCommand("copy");
+        sel.removeAllRanges();
+        showToast("Prompt copied");
+      });
+    }
+
+    function clearAll(){
+      fields.forEach(id => document.getElementById(id).selectedIndex = 0);
+      document.getElementById("customDetails").value = "";
+      document.getElementById("caption").value = "";
+      document.querySelectorAll(".motif").forEach(cb => cb.checked = false);
+
+      document.getElementById("resultContent").classList.remove("active");
+      document.getElementById("emptyState").style.display = "grid";
+      document.getElementById("artTitle").textContent = "";
+      document.getElementById("artVibe").textContent = "";
+      document.getElementById("artPrompt").textContent = "";
+      document.getElementById("artTags").innerHTML = "";
+      showToast("Builder cleared");
+    }
+
+    function showToast(message){
+      const toast = document.getElementById("toast");
+      toast.textContent = message;
+      toast.classList.add("show");
+      clearTimeout(window.__toastTimer);
+      window.__toastTimer = setTimeout(() => toast.classList.remove("show"), 1700);
+    }
+
+    document.getElementById("holiday").addEventListener("change", function(){
+      const defaults = holidayDefaultMotifs[this.value];
+      if(defaults && !selectedMotifs().length){
+        setMotifs(defaults.slice(0,2));
+      }
+    });
+  </script>
+</body>
+</html>
